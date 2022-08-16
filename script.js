@@ -1,24 +1,27 @@
 
-let choice = ["rock", "paper", "scissors"];
+
+
+
+
+// function getComputerChoice() {
+// let computerSelection = choice[Math.floor(Math.random() * choice.length)];
+// return computerSelection;
+// }
+
+// function getPlayerChoice() {
+// let playerSelection = prompt("rock, paper or scissors?").toLowerCase();
+// return playerSelection;
+// }
 let playerWin = 0;
 let computerWin = 0;
-let draw = 0;
-let rounds = 0;
 
-function getComputerChoice() {
-let computerSelection = choice[Math.floor(Math.random() * choice.length)];
-return computerSelection;
-}
+function playRound() {
+  let choice = ["rock", "paper", "scissors"];
+  let computerSelection = choice[Math.floor(Math.random() * choice.length)];
+  let playerSelection = "rock";
 
-function getPlayerChoice() {
-  let playerSelection = prompt("rock, paper or scissors?").toLowerCase();
-  return playerSelection;
-}
-
-
-function playRound(playerSelection, computerSelection) {
 if (playerSelection == computerSelection) {
-    return ++draw;
+    return ("tie");
   } else if (playerSelection == "rock" && computerSelection == "paper") {
     return ++computerWin;
   } else if (playerSelection == "rock" && computerSelection == "scissors") {
@@ -32,28 +35,23 @@ if (playerSelection == computerSelection) {
 } else if (playerSelection == "scissors" && computerSelection == "paper") {
     return ++playerWin;
   } else {
-    return ("User input error");
+    alert ("User input error");
   }
 }
 
-function game(playRound) {
-for (rounds = 0; rounds = 5; rounds++) {
-if (playerWin || computerWin == 3) {
-  return ("player wins");
- } else {
-  return ("computer wins");
- }
+function game() {
+  playRound();
+for (let rounds = 0; rounds <= 5; ++rounds) {
+if (playerWin >= 3) {
+console.log("playerWin");
+} else {
+console.log(computerWin);
 }
 }
+}
 
 
-const computerSelection = getComputerChoice();
-const playerSelection = getPlayerChoice();
-console.log(playRound(playerSelection, computerSelection));
-console.log(game(playRound));
-console.log(playerWin, computerWin)
-
-/*
-console.log(playRound(playerSelection, computerSelection));
-let playerSelection = prompt("rock,paper or scissors?").toLowerCase(); 
-*/
+// const computerSelection = getComputerChoice();
+// const playerSelection = getPlayerChoice();
+// console.log(playRound(playerSelection, computerSelection));
+// console.log(game(playRound));
