@@ -1,55 +1,40 @@
+//Randomly Pick Rock, Paper, or Scissor
+function getComputerChoice() {
+  let choice = ["Rock", "Paper", "Scissor"];
+  return choice[Math.floor(Math.random() * choice.length)];
+}
 
-
-
-
-
-// function getComputerChoice() {
-
-// return computerSelection;
-// }
-
-// function getPlayerChoice() {
-// 
-// return playerSelection;
-// }
-let playerWin = 0;
-let computerWin = 0;
-
-function playRound(playerSelection,computerSelection) {
-
-if (playerSelection == computerSelection) {
-    return ("tie");
-  } else if (playerSelection == "rock" && computerSelection == "paper") {
-    ++computerWin;
-  } else if (playerSelection == "rock" && computerSelection == "scissors") {
-    ++playerWin;
-} else if (playerSelection == "paper" && computerSelection == "scissors") {
-    ++computerWin;
-} else if (playerSelection == "paper" && computerSelection == "rock") {
-    ++playerWin;
-} else if (playerSelection == "scissors" && computerSelection == "rock") {
-    ++computerWin;
-} else if (playerSelection == "scissors" && computerSelection == "paper") {
-    ++playerWin;
+//Play 1 round
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === "Rock" && computerSelection === "Scissor") {
+      return("You Win! " + playerSelection + " beat " + computerSelection);
+  } else if (playerSelection === "Scissor" && computerSelection === "Paper") {
+      return("You Win! " + playerSelection + " beat " + computerSelection);
+  } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+      return("You Win! " + playerSelection + " beat " + computerSelection)
+  } else if (playerSelection === "Rock" && computerSelection === "Rock") {
+      return("You Draw! " + playerSelection + " draw against " + computerSelection)
+  } else if (playerSelection === "Paper" && computerSelection === "Paper") {
+      return("You Draw! " + playerSelection + " draw against " + computerSelection)
+  } else if (playerSelection === "Scissor" && computerSelection === "Scissor") {
+      return("You Draw! " + playerSelection + " draw against " + computerSelection)
   } else {
-    return ("User input error");
+      return("You Lose! " + computerSelection + " beat " + playerSelection);
   }
 }
 
-function game() {
-  playRound();
-for (let rounds = 0; rounds <= 5; ++rounds) {
-if (playerWin >= 3) {
-console.log("playerWin");
-} else {
-console.log(computerWin);
-}
-}
+// Make input case-insensitive
+function getPlayerChoice() {
+return prompt("rock, paper or scissors?").toLowerCase();
 }
 
 
-let playerSelection = prompt("rock, paper or scissors?").toLowerCase();
-let choice = ["rock", "paper", "scissors"];
-let computerSelection = choice[Math.floor(Math.random() * choice.length)];
 // console.log(playRound(playerSelection, computerSelection));
-// console.log(game(playRound));
+
+function game() {
+  for (let i = 0; i < 5; i++) {
+      console.log(playRound(getPlayerChoice(), getComputerChoice()));
+  }
+}
+
+game();
