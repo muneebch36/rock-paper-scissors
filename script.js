@@ -7,11 +7,23 @@ return computerSelection;
 }
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection == computerSelection) {
+if (playerSelection == computerSelection) {
     return ("Draw");
- } else {
+  } else if (playerSelection == "rock" && computerSelection == "paper") {
+    return ("computer wins");
+  } else if (playerSelection == "rock" && computerSelection == "scissors") {
+    return ("player wins");
+} else if (playerSelection == "paper" && computerSelection == "scissors") {
+    return ("computer wins");
+} else if (playerSelection == "paper" && computerSelection == "rock") {
+    return ("player wins");
+} else if (playerSelection == "scissors" && computerSelection == "rock") {
+    return ("computer wins");
+} else if (playerSelection == "scissors" && computerSelection == "paper") {
+    return ("player wins");
+  } else {
     return ("not draw");
-}
+  }
 }
 
 const playerSelection = "rock";
