@@ -16,26 +16,23 @@ if (playerSelection == computerSelection) {
   } else if (playerSelection == "rock" && computerSelection == "paper") {
     return ++computerWin;
   } else if (playerSelection == "rock" && computerSelection == "scissors") {
-    return ("playerWin")
+    return ++playerWin;
 } else if (playerSelection == "paper" && computerSelection == "scissors") {
     return ++computerWin;
 } else if (playerSelection == "paper" && computerSelection == "rock") {
-    return ("playerWin")
+    return ++playerWin;
 } else if (playerSelection == "scissors" && computerSelection == "rock") {
     return ++computerWin;
 } else if (playerSelection == "scissors" && computerSelection == "paper") {
-    return ("playerWin")
+    return ++playerWin;
   } else {
     return ("User input error");
   }
 }
 
 function game(playRound) {
-for (let i = 0; i < 5; i++) {
-++rounds;
-++computerWin;
-++playerWin;
-if (playerWin == 3) {
+for (let i = 0; i = 5; i++) {
+if (playerWin || computerWin == 3) {
   return ("player wins");
  } else {
   return ("computer wins");
