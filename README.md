@@ -2,7 +2,7 @@
 
 JS project.
 
-random thoughts:
+pseudocode:
 
 -get random input from computer out of 3 choices.
 given 3 choices use a math.random? to choose one?
@@ -39,6 +39,17 @@ return ("You Lose/Win X beats X");
 round started with function
 
 -play a game consisting of 5 rounds where winner is announced at the end
+
+increment player wins and computer wins within the playRound function
+
+++playerWin ++computerWin
+
+if (playerWin + computerWin) <= 5
+
+return whichever one has more wins between the 2
+
+
+
 
 
 
