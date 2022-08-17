@@ -1,3 +1,6 @@
+let playerWin = 0;
+let computerWin = 0;
+
 function getComputerChoice() {
   let choice = ["rock", "paper", "scissors"];
   return choice[Math.floor(Math.random() * choice.length)];
@@ -9,25 +12,31 @@ function getPlayerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === "scissors") {
-      return("You Win! " + playerSelection + " beat " + computerSelection);
+      ++playerWin;
+      return("you win. " +playerSelection + " beats " +computerSelection);
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-      return("You Win! " + playerSelection + " beat " + computerSelection);
+      ++playerWin;
+      return("you win. " +playerSelection + " beats " +computerSelection);
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-      return("You Win! " + playerSelection + " beat " + computerSelection)
+      ++playerWin;
+      return("you win. " +playerSelection + " beats " +computerSelection)
   } else if (playerSelection === "rock" && computerSelection === "rock") {
-      return("You Draw! " + playerSelection + " draw against " + computerSelection)
+      return("draw. " +playerSelection + " draws against " +computerSelection)
   } else if (playerSelection === "paper" && computerSelection === "paper") {
-      return("You Draw! " + playerSelection + " draw against " + computerSelection)
+      return("draw. " +playerSelection + " draws against " +computerSelection)
   } else if (playerSelection === "scissors" && computerSelection === "scissors") {
-      return("You Draw! " + playerSelection + " draw against " + computerSelection)
+      return("draw. " +playerSelection + " draws against " +computerSelection)
   } else if (playerSelection === "rock" && computerSelection === "paper") {
-      return("You Lose! " + computerSelection + " beat " + playerSelection);
+      ++computerWin;
+      return("you lose. " +computerSelection + " beats " +playerSelection);
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
-      return("You Lose! " + computerSelection + " beat " + playerSelection);
+      ++computerWin;
+      return("you lose. " +computerSelection + " beats " +playerSelection);
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-      return("You Lose! " + computerSelection + " beat " + playerSelection);
+      ++computerWin;
+      return("you lose. " +computerSelection + " beats " +playerSelection);
   } else {
-      return("User input error");
+      return("user input error");
   }
 }
 
@@ -40,3 +49,4 @@ function game() {
 }
 
 game();
+console.log("final score is " +playerWin + "-" +computerWin);
