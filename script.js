@@ -16,17 +16,13 @@ function playRound(playerSelection, computerSelection) {
       return("you win. " +playerSelection + " beats " +computerSelection);
   } else if (playerSelection === "paper" && computerSelection === "rock") {
       ++playerWin;
-      return("you win. " +playerSelection + " beats " +computerSelection);
+      return("you win. " +playerSelection + " beats " +computerSelection)
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
       ++playerWin;
-      return("you win. " +playerSelection + " beats " +computerSelection)
-  } else if (playerSelection === "rock" && computerSelection === "rock") {
-      return("draw. " +playerSelection + " draws against " +computerSelection)
-  } else if (playerSelection === "paper" && computerSelection === "paper") {
-      return("draw. " +playerSelection + " draws against " +computerSelection)
-  } else if (playerSelection === "scissors" && computerSelection === "scissors") {
-      return("draw. " +playerSelection + " draws against " +computerSelection)
-  } else if (playerSelection === "rock" && computerSelection === "paper") {
+      return("you win. " +playerSelection + " beats " +computerSelection);
+  } else if (playerSelection === computerSelection) {
+      return("draw. " +playerSelection + " draws against " +computerSelection);
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
       ++computerWin;
       return("you lose. " +computerSelection + " beats " +playerSelection);
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
