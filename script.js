@@ -36,13 +36,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {
-  for (let i = 0; i < 5; i++) {
-    let computerSelection = getComputerChoice();
-    let playerSelection = getPlayerChoice();
-    console.log(playRound(playerSelection, computerSelection));
-  }
-}
-
-game();
+let computerSelection = getComputerChoice();
+let playerSelection = getPlayerChoice();
+console.log(playRound(playerSelection, computerSelection));
 console.log("final score is " +playerWin + "-" +computerWin);
