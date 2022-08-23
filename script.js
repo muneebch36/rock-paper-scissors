@@ -36,7 +36,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-let computerSelection = getComputerChoice();
-let playerSelection = getPlayerChoice();
-console.log(playRound(playerSelection, computerSelection));
-console.log("final score is " +playerWin + "-" +computerWin);
+// let computerSelection = getComputerChoice();
+// let playerSelection = getPlayerChoice();
+// console.log(playRound(playerSelection, computerSelection));
+// console.log("final score is " +playerWin + "-" +computerWin);
