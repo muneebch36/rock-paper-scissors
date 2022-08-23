@@ -6,11 +6,8 @@ function getComputerChoice() {
   return choice[Math.floor(Math.random() * choice.length)];
 }
 
-function getPlayerChoice() {
-  return prompt("rock, paper or scissors?").toLowerCase();
-}  
-
 function playRound(playerSelection, computerSelection) {
+  resetGame();
   if (playerSelection === "rock" && computerSelection === "scissors") {
       ++playerWin;
       return("you win. " +playerSelection + " beats " +computerSelection);
@@ -36,27 +33,37 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-
 function rock() {
   let computerSelection = getComputerChoice();
   let playerSelection = "rock";
-  console.log("final score is " +playerWin + "-" +computerWin);
   document.querySelector("#status").textContent = (playRound(playerSelection, computerSelection));
+  document.querySelector(".score").textContent = ("score: " +playerWin + "-" +computerWin);
 }
 
 function paper() {
   let computerSelection = getComputerChoice();
   let playerSelection = "paper";
-  console.log(playRound(playerSelection, computerSelection));
-  console.log("final score is " +playerWin + "-" +computerWin);
+  document.querySelector("#status").textContent = (playRound(playerSelection, computerSelection));
+  document.querySelector(".score").textContent = ("score: " +playerWin + "-" +computerWin);
 }
 
 function scissors() {
   let computerSelection = getComputerChoice();
   let playerSelection = "scissors";
-  console.log(playRound(playerSelection, computerSelection));
-  console.log("final score is " +playerWin + "-" +computerWin);
+  document.querySelector("#status").textContent = (playRound(playerSelection, computerSelection));
+  document.querySelector(".score").textContent = ("score: " +playerWin + "-" +computerWin);
 }
+
+
+function resetGame() {
+  if (playerWin === 5) {
+    document.querySelector("#status").textContent = "naisu";
+    document.querySelector(".score").textContent = ("Player wins " +playerWin + "-" +computerWin);
+  } else if (computerWin === 5) {                            
+      document.querySelector("#status").textContent = "reported for throwing";
+      document.querySelector(".score").textContent = ("Computer wins " +computerWin + "-" +playerWin);
+  }
+  }
 
 
 // function resetGame() {
