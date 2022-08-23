@@ -7,16 +7,21 @@
   font-family: sans-serif, Geneva, Tahoma;
 }
 
+h1 {
+  text-align: center;
+}
+
+h2 {
+  color: rgb(3, 3, 3);
+  text-align: center;
+}
+
 .hand-signs {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 30px;
-  padding: 30px 80px 80px 80px;
-}
-
-.hand {
-  width: 300px;
+  padding: 80px 80px 80px 80px;
 }
 
 .hand > img {
