@@ -8,21 +8,19 @@
   </head>
   <body>
     <h1>Rock Paper Scissors</h1>
-    <div class="hand-signs">
-      <div class="signs">
-        <div class="hand">
-          <img src="./rock.png" alt="rock hand" />
-        </div>
-        <div class="hand">
-          <img src="./paper.png" alt="paper hand" />
-        </div>
-        <div class="hand">
-          <img src="./scissors.png" alt="scissor hand" />
-        </div>
+    <div class="signs">
+      <div class="hand">
+        <img src="./rock.png" onclick="rock()" />
+      </div>
+      <div class="hand">
+        <img src="./paper.png" onclick="paper()" />
+      </div>
+      <div class="hand">
+        <img src="./scissors.png" onclick="scissors()" />
       </div>
     </div>
     <div class="score"><h1>First to 5 wins</h1></div>
-    <div class="status"><h2></h2></div>
-    <div class="retry"></div>
+    <h2 id="status"></h2>
+    <button id="retry"></h2>
   </body>
 </html>

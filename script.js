@@ -36,7 +36,55 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// let computerSelection = getComputerChoice();
-// let playerSelection = getPlayerChoice();
-// console.log(playRound(playerSelection, computerSelection));
-// console.log("final score is " +playerWin + "-" +computerWin);
+
+function rock() {
+  let computerSelection = getComputerChoice();
+  let playerSelection = "rock";
+  console.log("final score is " +playerWin + "-" +computerWin);
+  document.querySelector("#status").textContent = (playRound(playerSelection, computerSelection));
+}
+
+function paper() {
+  let computerSelection = getComputerChoice();
+  let playerSelection = "paper";
+  console.log(playRound(playerSelection, computerSelection));
+  console.log("final score is " +playerWin + "-" +computerWin);
+}
+
+function scissors() {
+  let computerSelection = getComputerChoice();
+  let playerSelection = "scissors";
+  console.log(playRound(playerSelection, computerSelection));
+  console.log("final score is " +playerWin + "-" +computerWin);
+}
+
+
+// function resetGame() {
+//   guessCount = 1;
+
+//   const resetParas = document.querySelectorAll(".resultParas p");
+//   for (const resetPara of resetParas) {
+//     resetPara.textContent = "";
+//   }
+//   resetButton.parentNode.removeChild(resetButton);
+
+//   guessField.disabled = false;
+//   guessSubmit.disabled = false;
+//   guessField.value = "";
+//   guessField.focus();
+
+//   lastResult.style.backgroundColor = "white";
+
+//   randomNumber = Math.floor(Math.random() * 100) + 1;
+//   console.log(randomNumber);
+// }
+
+// function game() {
+//   for (let i = 0; i < 5; i++) {
+//     let computerSelection = getComputerChoice();
+//     let playerSelection = getPlayerChoice();
+//     console.log(playRound(playerSelection, computerSelection));
+//   }
+// }
+
+// game();

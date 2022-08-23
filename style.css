@@ -16,24 +16,24 @@ h2 {
   text-align: center;
 }
 
-.hand-signs {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 30px;
-  padding: 80px 80px 80px 80px;
-}
-
 .hand > img {
   border-radius: 5px;
   width: 300px;
   height: 300px;
+  -webkit-user-drag: none;
 }
 
 .signs {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
+  text-align: center;
+  padding: 80px 80px 80px 80px;
+}
+
+#status {
+  color: gray;
   text-align: center;
 }
