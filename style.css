@@ -37,3 +37,14 @@ h2 {
   color: gray;
   text-align: center;
 }
+
+button {
+  height: 35px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #9696962c;
+  background-color: white;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}

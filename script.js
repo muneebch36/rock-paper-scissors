@@ -3,10 +3,11 @@ let computerWin = 0;
 
 function getComputerChoice() {
   let choice = ["rock", "paper", "scissors"];
-  return choice[Math.floor(Math.random() * choice.length)];
+  return computerSelection = choice[Math.floor(Math.random() * choice.length)];
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
+  getComputerChoice();
   if (playerSelection === "rock" && computerSelection === "scissors") {
       ++playerWin;
       return("you win. " +playerSelection + " beats " +computerSelection);
@@ -27,45 +28,51 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
       ++computerWin;
       return("you lose. " +computerSelection + " beats " +playerSelection);
-  } else {
-      return("user input error");
-  }
+  } 
 }
 
 function rock() {
-  let computerSelection = getComputerChoice();
-  let playerSelection = "rock";
-  document.querySelector("#status").textContent = (playRound(playerSelection, computerSelection));
-  document.querySelector(".score").textContent = ("score: " +playerWin + "-" +computerWin);
-  resetGame();
+  playerSelection = "rock";
+  updateGame();
 }
 
 function paper() {
-  let computerSelection = getComputerChoice();
-  let playerSelection = "paper";
-  document.querySelector("#status").textContent = (playRound(playerSelection, computerSelection));
-  document.querySelector(".score").textContent = ("score: " +playerWin + "-" +computerWin);
-  resetGame();
+  playerSelection = "paper";
+  updateGame();
 }
 
 function scissors() {
-  let computerSelection = getComputerChoice();
-  let playerSelection = "scissors";
-  document.querySelector("#status").textContent = (playRound(playerSelection, computerSelection));
-  document.querySelector(".score").textContent = ("score: " +playerWin + "-" +computerWin);
-   resetGame();
+  playerSelection = "scissors";
+  updateGame();
 }
 
-function resetGame() {
-  if (computerWin === 5) {
-    document.querySelector("#status").textContent = "";   
+function updateGame() {
+  if ((computerWin < 5) || (playerWin < 5)){
+    document.querySelector("#status").textContent = (playRound(playerSelection));
+    document.querySelector(".score").textContent = ("score: " +playerWin + "-" +computerWin);
+  } 
+
+  if (computerWin === 5) {     
     document.querySelector(".score").textContent = ("Computer wins " +computerWin + "-" +playerWin);
-    playerWin = 0;
-    computerWin = 0;
-  } else if (playerWin === 5) { 
-    document.querySelector("#status").textContent = "";                     
+    resetButton(); 
+  } else if (playerWin === 5) {                 
     document.querySelector(".score").textContent = ("Player wins " +playerWin + "-" +computerWin);
-    playerWin = 0;
-    computerWin = 0;
+    resetButton(); 
   }
   }
+
+  function resetButton() {
+    document.querySelector("#status").textContent = "";   
+    btn = document.createElement("button");
+    document.querySelector("#status").appendChild(btn);
+    btn.innerHTML = "New game?";
+    btn.addEventListener("click", function () {
+      alert("Game reset");
+      playerWin = 0;
+      computerWin = 0;
+      document.querySelector(".score").textContent = "";
+      btn.remove();
+    });
+  }
+
+
